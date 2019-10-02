@@ -1,0 +1,21 @@
+<h3 id="git常用命令指南">git常用命令指南</h3>
+
+<p><code class="highlighter-rouge">git checkout master</code> 切换分支到master</p>
+
+<p><code class="highlighter-rouge">git checkout -b * </code>创建并切换分支，一般适用于修改bug，需要将当前工作无缝切换到一个新的分支分支</p>
+
+<p><code class="highlighter-rouge">git branch -v</code> 查看各个分支最后一次提交</p>
+
+<p><code class="highlighter-rouge">git add .</code> 需要添加当前目录下所有文件</p>
+
+<p><code class="highlighter-rouge">git commit -m 'add first commit'</code> 适用于直接在commit中添加注释，一般在注释中第一个添加是什么操作标示</p>
+
+<p><code class="highlighter-rouge">git branch -d mybranch</code> 删除mybranch分支</p>
+
+<p><code class="highlighter-rouge">git branch</code>-a 列出当前所有分支</p>
+
+<p><code class="highlighter-rouge">git reset --hard</code> 回到上一次</p>
+
+<p><code class="highlighter-rouge">git clean -df</code> 删除没有被追踪的文件夹和目录，<em>.gitignore文件生效，在里面的不删除</em></p>
+
+<p><code class="highlighter-rouge">git clean -x </code> 删除当前目录下所有没有track过的文件，<em>.gitignore文件无效</em></p>

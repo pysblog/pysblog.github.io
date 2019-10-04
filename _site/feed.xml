@@ -5,9 +5,39 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Oct 2019 22:43:25 +0800</pubDate>
-    <lastBuildDate>Wed, 02 Oct 2019 22:43:25 +0800</lastBuildDate>
+    <pubDate>Fri, 04 Oct 2019 15:07:26 +0800</pubDate>
+    <lastBuildDate>Fri, 04 Oct 2019 15:07:26 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>电脑连接手机热点ssh不能正确连接问题</title>
+        <description>&lt;h3 id=&quot;遇到的问题&quot;&gt;遇到的问题&lt;/h3&gt;
+&lt;p&gt;电脑连接手机热点后，ssh不能正确连接&lt;/p&gt;
+&lt;h3 id=&quot;问题的产生&quot;&gt;问题的产生&lt;/h3&gt;
+
+&lt;p&gt;这个问题的产生是这一个样子的，我回家后电脑因为没有网络就使用了手机开的热点进行连接网络。中间我需要连接一下远程服务器进行一些设置操作，我发现可以ping通，并且可以始终不能ssh连接上。&lt;/p&gt;
+
+&lt;p&gt;报的错误是ssh was colsed by 远程服务器&lt;/p&gt;
+
+&lt;p&gt;因为是服务器地址位于国外，所以我又使用了tcp阻断测试了一下，发现是可以连接正常的ssh的22端口的。这就让我很懵逼了。&lt;/p&gt;
+
+&lt;h3 id=&quot;问题的分析&quot;&gt;问题的分析&lt;/h3&gt;
+&lt;p&gt;在之前的电脑网络环境上是可以直接ssh上去的，并且目前ip也没有被封锁，就推断很大可能是自身网络的问题。&lt;/p&gt;
+&lt;h3 id=&quot;问题的解决&quot;&gt;问题的解决&lt;/h3&gt;
+
+&lt;p&gt;修改MTU的值。进入&lt;code class=&quot;highlighter-rouge&quot;&gt;设置-&amp;gt;网络-&amp;gt;高级-&amp;gt;硬件&lt;/code&gt;里面，就可以看到MTU了，把他修改成推荐的最低值，不使用默认的1500就好了&lt;/p&gt;
+
+&lt;h3 id=&quot;无fuck说&quot;&gt;无fuck说&lt;/h3&gt;
+&lt;p&gt;在修改这篇文章的时候我又遇到了一个问题，让人很懵逼的问题。还好最终解决掉了它。就是在开始的文章识别头上的date只能精确到天，不需要再精确z下去了，不然识别不出来。QAQ，也花了一些时间debug出来的&lt;/p&gt;
+</description>
+        <pubDate>Fri, 04 Oct 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/10/%E9%81%87%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E5%9D%91%E7%88%B9%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/10/%E9%81%87%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E5%9D%91%E7%88%B9%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+        
+        <category>手机热点ssh和代理</category>
+        
+        
+      </item>
     
       <item>
         <title>git常用命令指南</title>
@@ -32,6 +62,8 @@
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clean -df&lt;/code&gt; 删除没有被追踪的文件夹和目录，&lt;em&gt;.gitignore文件生效，在里面的不删除&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git clean -x &lt;/code&gt; 删除当前目录下所有没有track过的文件，&lt;em&gt;.gitignore文件无效&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git reset --hard origin/master &lt;/code&gt; 使用origin/master分支重置当前分支&lt;/p&gt;
 </description>
         <pubDate>Wed, 02 Oct 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2019/10/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
@@ -1427,74 +1459,6 @@ Configuration file: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpa
         <guid isPermaLink="true">http://localhost:4000/2016/10/jekyll_tutorials1/</guid>
         
         <category>博客</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>iOS设备左下角出现Appicon</title>
-        <description>&lt;p&gt;最近发现我设备锁屏后，按Home屏幕变亮的时候，左下角出现一个灰色的Appicon （应用图标），关于这个应用图标的出现做了一些调研，下面是应用图标出现的几种情况。&lt;/p&gt;
-
-&lt;p&gt;图一 iOS 系统自带的 App icon , 图二 第三方 App icon , 图三 通过 iBeacon 信号激活的 demo icon&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/icon/image01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;结论有三种情况导致设备的左下角出现灰色的-app-icon&quot;&gt;结论：有三种情况导致设备的左下角出现灰色的 App icon&lt;/h2&gt;
-
-&lt;h3 id=&quot;1appstore根据地点对app-推荐&quot;&gt;1、AppStore根据地点对App 推荐&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;简介&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;iOS 8会基于你的位置在锁屏界面上展示一个app快捷打开方式。比如你正在星巴克附近，那iOS 8会在锁屏界面上展示星巴克应用的icon，方便你快速打开。一些用户也表示会在锁屏界面收到app推荐，比如你在Costco和Apple Store附近，即便你之前没有安装过这些应用。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2app实现了handoff功能&quot;&gt;2、App实现了handoff功能&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/Handoff/HandoffFundamentals/HandoffFundamentals.html&quot;&gt;handoff简介&lt;/a&gt;：&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;OS X 10.10 Yosemite&lt;/code&gt; 新增了一个酷炫的功能 “Hand Off”，打开这个功能之后，用户可以在 Mac 上对 iPad 和 iPhone 进行操作，比如能够编写 iPhone 上未完成的邮件，并且可以在Mac上打开 iPhone 的热点等等， Mac 的 Hand Off 功能只能识别 Mac 周围的 iPhone 手机。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;handoff有几个要求：&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;1 两台设备都要登录同一个 iCloud 账号。&lt;/li&gt;
-      &lt;li&gt;2 两台设备上的app有相同的 TeamID 。&lt;/li&gt;
-      &lt;li&gt;3 锁屏（或dock）设备上的app支持的 &lt;code class=&quot;highlighter-rouge&quot;&gt;NSUserActivityTypes&lt;/code&gt; 包含活动设备上的app当前的UserActivityType。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3app内有ibeacon信号接收功能app被ibeacon信号唤醒&quot;&gt;3、App内有iBeacon信号接收功能，App被iBeacon信号唤醒&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://developer.apple.com/ibeacon/&quot;&gt;iBeacon简介&lt;/a&gt;&lt;/strong&gt;：
-    &lt;ul&gt;
-      &lt;li&gt;是苹果公司2013年9月发布的移动设备用OS（iOS7）上配备的新功能。工作原理类似之前的蓝牙技术，由 &lt;code class=&quot;highlighter-rouge&quot;&gt;iBeacon&lt;/code&gt; 发射信号，iOS设备定位接受，反馈信号。根据这项简单的定位技术可以做出许多的相应技术应用,如：&lt;code class=&quot;highlighter-rouge&quot;&gt;室内定位&lt;/code&gt; 、&lt;code class=&quot;highlighter-rouge&quot;&gt;商品推荐&lt;/code&gt; 、&lt;code class=&quot;highlighter-rouge&quot;&gt;微信摇一摇&lt;/code&gt; 等。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;App icon出现的原因&lt;/strong&gt;：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;iBeacon&lt;/code&gt; 具备后台定位的能力，只要用户把蓝牙(4.0或以后)开启 和 允许 App 访问位置信息。在有被 App 检测的 &lt;code class=&quot;highlighter-rouge&quot;&gt;iBeacon&lt;/code&gt; 出现时，如果设备是锁屏状态，设备的左下角就会出现该 App 的 icon 。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;参考链接:  &lt;br /&gt;
-&lt;a href=&quot;http://stackoverflow.com/questions/26082414/make-app-appear-as-ios-8-suggested-app-at-lockscreen/26676020#26676020&quot;&gt;Make app appear as iOS 8 Suggested App at lockscreen&lt;/a&gt;  &lt;br /&gt;
-&lt;a href=&quot;http://stackoverflow.com/questions/25897219/can-i-get-my-ios-app-to-appear-on-the-lower-left-corner-of-the-lock-screen/25898890#25898890&quot;&gt;Can I get my iOS app to appear on the lower left corner of the lock screen?&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://www.zhihu.com/question/26653964&quot;&gt;为什么 iOS 8 锁屏界面的左下角经常会出现某个应用的小图标？&lt;/a&gt;  &lt;br /&gt;
-&lt;a href=&quot;https://www.v2ex.com/t/142320&quot;&gt;关于 IOS8 锁屏左下方出现的 APP ICON&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;转载请注明：&lt;a href=&quot;http://baixin&quot;&gt;潘柏信的博客&lt;/a&gt; » &lt;a href=&quot;http://baixin.io/2016/09/iOSLowerLeftAppicon/&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 23 Sep 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/09/iOSLowerLeftAppicon/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/09/iOSLowerLeftAppicon/</guid>
-        
-        <category>iOS</category>
         
         
       </item>

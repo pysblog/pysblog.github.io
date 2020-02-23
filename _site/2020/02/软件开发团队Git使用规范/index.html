@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>电脑连接手机热点ssh不能正确连接问题</title>
-  <meta name="description" content="遇到的问题电脑连接手机热点后，ssh不能正确连接问题的产生">
+  <title>软件开发团队Git使用规范</title>
+  <meta name="description" content="软件开发团队Git使用规范">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="电脑连接手机热点ssh不能正确连接问题">
-  <meta name="twitter:description" content="遇到的问题电脑连接手机热点后，ssh不能正确连接问题的产生">
+  <meta name="twitter:title" content="软件开发团队Git使用规范">
+  <meta name="twitter:description" content="软件开发团队Git使用规范">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="电脑连接手机热点ssh不能正确连接问题">
-  <meta property="og:description" content="遇到的问题电脑连接手机热点后，ssh不能正确连接问题的产生">
+  <meta property="og:title" content="软件开发团队Git使用规范">
+  <meta property="og:description" content="软件开发团队Git使用规范">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2019/10/%E9%81%87%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E5%9D%91%E7%88%B9%E7%9A%84%E9%97%AE%E9%A2%98/">
+  <link rel="canonical" href="http://localhost:4000/2020/02/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9FGit%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/">
   <link rel="alternate" type="application/rss+xml" title="彭永顺" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -175,10 +175,10 @@
         <div class="content-wrapper__inner">
             <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">电脑连接手机热点ssh不能正确连接问题</h1>
+    <h1 class="post-title">软件开发团队Git使用规范</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2019-10-04 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2019-10-04</time>  
+      <time datetime="2020-02-08 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2020-02-08</time>  
          
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -186,24 +186,183 @@
   </header>
 
   <section class="post">
-    <h3 id="遇到的问题">遇到的问题</h3>
-<p>电脑连接手机热点后，ssh不能正确连接</p>
-<h3 id="问题的产生">问题的产生</h3>
+    <h1 id="软件开发团队git使用规范">软件开发团队Git使用规范</h1>
 
-<p>这个问题的产生是这一个样子的，我回家后电脑因为没有网络就使用了手机开的热点进行连接网络。中间我需要连接一下远程服务器进行一些设置操作，我发现可以ping通，并且可以始终不能ssh连接上。</p>
+<ul>
+  <li><a href="#1.Git规范的必要性">Git规范的必要性</a></li>
+  <li><a href="#2.分支管理规范">分支管理规范</a></li>
+</ul>
 
-<p>报的错误是ssh was colsed by 远程服务器</p>
+<p>Git能极大地提高程序员的生产力。现如今大部分项目都在使用Git作为代码管理工具，无论是在代码管理、版本控制以及团队协作上，Git相比其他版本控制软件都有着无可比拟的优势。</p>
 
-<p>因为是服务器地址位于国外，所以我又使用了tcp阻断测试了一下，发现是可以连接正常的ssh的22端口的。这就让我很懵逼了。</p>
+<p>虽然Git是个优秀的工具，但是在项目中是否能够正确合理的使用，才是其能否发挥最大的优势的关键所在。</p>
 
-<h3 id="问题的分析">问题的分析</h3>
-<p>在之前的电脑网络环境上是可以直接ssh上去的，并且目前ip也没有被封锁，就推断很大可能是自身网络的问题。</p>
-<h3 id="问题的解决">问题的解决</h3>
+<blockquote>
+  <h2 id="1git规范的必要性">1.Git规范的必要性</h2>
+</blockquote>
 
-<p>修改MTU的值。进入<code class="highlighter-rouge">设置-&gt;网络-&gt;高级-&gt;硬件</code>里面，就可以看到MTU了，把他修改成推荐的最低值，不使用默认的1500就好了</p>
+<p>既然需要认同一份Git规范，那么这个规范需要规范哪些内容，解决哪些问题，又带来哪些好处呢？</p>
 
-<h3 id="无fuck说">无fuck说</h3>
-<p>在修改这篇文章的时候我又遇到了一个问题，让人很懵逼的问题。还好最终解决掉了它。就是在开始的文章识别头上的date只能精确到天，不需要再精确z下去了，不然识别不出来。QAQ，也花了一些时间debug出来的</p>
+<ol>
+  <li>分支管理
+    <ul>
+      <li>代码提交在应该提交的分支</li>
+      <li>随时可以切换到线上稳定版本的代码</li>
+      <li>多个版本的开发工作可以同时进行</li>
+    </ul>
+  </li>
+  <li>提交记录的可读性
+    <ul>
+      <li>准确的提交描述，具备可检索性</li>
+      <li>合理的提交范围，避免一个功能就一个提交</li>
+      <li>分支间的合并有提交记录，且合并后结果清晰明了</li>
+      <li>避免出现过多的分支</li>
+    </ul>
+  </li>
+  <li>团队协作
+    <ul>
+      <li>明确每个分支的作用，做到对应的分支执行对应的操作</li>
+      <li>合理的提交，每次提交有明确的改动范围和规范的提交信息</li>
+      <li>使用Git管理版本迭代、谨记线上bug fix、功能开发等任务</li>
+    </ul>
+  </li>
+  <li>适用于敏捷开发</li>
+</ol>
+
+<p>以上就是这份Git规范的作用和使命。</p>
+
+<blockquote>
+  <h2 id="2分支管理规范">2.分支管理规范</h2>
+</blockquote>
+
+<h4 id="21-分支说明和操作">2.1 分支说明和操作</h4>
+
+<ul>
+  <li>
+    <p>master分支</p>
+
+    <ul>
+      <li>主分支，永远处于稳定状态，对应当前线上版本</li>
+      <li>以tag标记一个版本，因此在master分支上看到的每一个tag都应该对应一个线上版本</li>
+      <li>不允许在该分支上直接提交代码</li>
+    </ul>
+  </li>
+  <li>
+    <p>developer分支</p>
+
+    <ul>
+      <li>开发分支，包含了项目最新的功能和代码，所有开发都以来developer分支进行</li>
+      <li>小的改动、或者协作人数较少时可以直接编辑此分支</li>
+      <li>改动较多时，以一个新的feature分支进行</li>
+    </ul>
+  </li>
+  <li>
+    <p>feature分支</p>
+
+    <ul>
+      <li>功能分支，作为较多人同时协作时的功能分支</li>
+      <li>较多人开发或者新的功能时，从developer分支切换出feature分支，分支名称为feature/xxx</li>
+      <li>开发完毕后合并回developer分支并且删除该feature分支</li>
+    </ul>
+  </li>
+  <li>
+    <p>release分支</p>
+  </li>
+  <li>
+    <p>hotfix分支</p>
+
+    <p>目前用于敏捷开发，暂时不设置这两个分支。</p>
+  </li>
+</ul>
+
+<h3 id="22项目分支操作流程示例">2.2项目分支操作流程示例</h3>
+
+<p>这部分内容结合日常项目的开发流程，涉及到开发新功能、分支合并、发布新版本以及发布紧急修复版本等操作，展示常用的命令和操作。</p>
+
+<ol>
+  <li>
+    <p>切到developer分支，更新develop最新代码</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout develop
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>从当前分支上新建<code class="highlighter-rouge">feature</code>分支，开发新功能</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> feature/pysNewBranch
+...
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"ADD 添加什么功能文件"</span>
+   
+<span class="c"># 其他提交</span>
+...
+</code></pre></div>    </div>
+
+    <p>如果此时developer分支有一个提交，影响到你的feature开发，可以 rebase develop分支，前提是 <code class="highlighter-rouge">该feature分支只有你自己一个人在开发，如果多人都在该分支，需要进行协调</code></p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 切换到 developer 扽之并更新 developer 分支代码</span>
+git checkout developer
+git pull <span class="nt">--rebase</span>
+   
+<span class="c"># 切回 feature 分支</span>
+git checkout feature/xxx
+git rebase developer
+   
+<span class="c"># 如果需要提交到远端，且之前已经提交到远端，此时需要强推(强推需慎重)</span>
+git push <span class="nt">--force</span>
+</code></pre></div>    </div>
+
+    <p>上述场景也可以通过<code class="highlighter-rouge">git cherry-pick </code>来实现，有兴趣的可以去了解一下这个指令。</p>
+  </li>
+</ol>
+
+<blockquote>
+  <h4 id="提交信息规范">提交信息规范</h4>
+</blockquote>
+
+<p>提交信息规范部分参考 <a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commits">Angular.js commit messgae</a>。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;<span class="nb">type</span><span class="o">&gt;(</span>&lt;scope&gt;<span class="o">)</span>:&lt;subject&gt;
+</code></pre></div></div>
+
+<p>各个部分的说明如下：</p>
+
+<ul>
+  <li>
+    <h5 id="type类型提交的类别">type类型，提交的类别</h5>
+
+    <ul>
+      <li>FEAT：新功能</li>
+      <li>FIX：修复bug</li>
+      <li>DOCS：文档变动</li>
+      <li>STYLE：各式调整，对代码实际运行没有改动，添加空格、格式化等</li>
+      <li>PERF：提升性能的改动</li>
+      <li>TEST：添加或者修正测试代码</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="scope-修改范围">Scope 修改范围</h3>
+
+    <ul>
+      <li>主要是此次修改涉及到的内容，简单概括，例如login、train-order</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="修改的描述">修改的描述</h3>
+
+    <ul>
+      <li>具体的修改描述信息</li>
+    </ul>
+  </li>
+  <li>
+    <p>示例</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FIX<span class="o">(</span>login<span class="o">)</span>:登录接口返回信息强验证BUG修改
+TEST<span class="o">(</span>login<span class="o">)</span>:列表页面添加测试代码
+</code></pre></div>    </div>
+  </li>
+</ul>
+
 
 
   </section>
@@ -273,13 +432,13 @@
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2019/10/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-toggle="tooltip" data-placement="top" title="git常用命令指南">上一篇：  <span>git常用命令指南</span>
+            <a href="/2019/10/%E9%81%87%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E5%9D%91%E7%88%B9%E7%9A%84%E9%97%AE%E9%A2%98/" data-toggle="tooltip" data-placement="top" title="电脑连接手机热点ssh不能正确连接问题">上一篇：  <span>电脑连接手机热点ssh不能正确连接问题</span>
             </a>
         </li>
         
         
         <li class="next">
-            <a href="/2020/02/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9FGit%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/" data-toggle="tooltip" data-placement="top" title="软件开发团队Git使用规范">下一篇：  <span>软件开发团队Git使用规范</span>
+            <a href="/2020/02/2019%E8%BF%99%E4%B8%80%E5%B9%B4/" data-toggle="tooltip" data-placement="top" title="2019这一年">下一篇：  <span>2019这一年</span>
             </a>
         </li>
         
@@ -293,8 +452,8 @@
     <script>
     
     var disqus_config = function () {
-        this.page.url = "http://localhost:4000/2019/10/%E9%81%87%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E5%9D%91%E7%88%B9%E7%9A%84%E9%97%AE%E9%A2%98/";
-        this.page.identifier = "/2019/10/%E9%81%87%E5%88%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E5%9D%91%E7%88%B9%E7%9A%84%E9%97%AE%E9%A2%98/";
+        this.page.url = "http://localhost:4000/2020/02/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9FGit%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/";
+        this.page.identifier = "/2020/02/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9FGit%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/";
     };
     var disqus_shortname = 'leopard';
     

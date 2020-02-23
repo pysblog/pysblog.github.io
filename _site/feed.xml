@@ -5,8 +5,8 @@
     <description>欢迎来到我的个人站~</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 21 Feb 2020 23:09:11 +0800</pubDate>
-    <lastBuildDate>Fri, 21 Feb 2020 23:09:11 +0800</lastBuildDate>
+    <pubDate>Sun, 23 Feb 2020 22:37:18 +0800</pubDate>
+    <lastBuildDate>Sun, 23 Feb 2020 22:37:18 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -287,6 +287,195 @@
         <guid isPermaLink="true">http://localhost:4000/2020/02/2019%E8%BF%99%E4%B8%80%E5%B9%B4/</guid>
         
         <category>年度总结</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>软件开发团队Git使用规范</title>
+        <description>&lt;h1 id=&quot;软件开发团队git使用规范&quot;&gt;软件开发团队Git使用规范&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#1.Git规范的必要性&quot;&gt;Git规范的必要性&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2.分支管理规范&quot;&gt;分支管理规范&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Git能极大地提高程序员的生产力。现如今大部分项目都在使用Git作为代码管理工具，无论是在代码管理、版本控制以及团队协作上，Git相比其他版本控制软件都有着无可比拟的优势。&lt;/p&gt;
+
+&lt;p&gt;虽然Git是个优秀的工具，但是在项目中是否能够正确合理的使用，才是其能否发挥最大的优势的关键所在。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;1git规范的必要性&quot;&gt;1.Git规范的必要性&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;既然需要认同一份Git规范，那么这个规范需要规范哪些内容，解决哪些问题，又带来哪些好处呢？&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;分支管理
+    &lt;ul&gt;
+      &lt;li&gt;代码提交在应该提交的分支&lt;/li&gt;
+      &lt;li&gt;随时可以切换到线上稳定版本的代码&lt;/li&gt;
+      &lt;li&gt;多个版本的开发工作可以同时进行&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;提交记录的可读性
+    &lt;ul&gt;
+      &lt;li&gt;准确的提交描述，具备可检索性&lt;/li&gt;
+      &lt;li&gt;合理的提交范围，避免一个功能就一个提交&lt;/li&gt;
+      &lt;li&gt;分支间的合并有提交记录，且合并后结果清晰明了&lt;/li&gt;
+      &lt;li&gt;避免出现过多的分支&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;团队协作
+    &lt;ul&gt;
+      &lt;li&gt;明确每个分支的作用，做到对应的分支执行对应的操作&lt;/li&gt;
+      &lt;li&gt;合理的提交，每次提交有明确的改动范围和规范的提交信息&lt;/li&gt;
+      &lt;li&gt;使用Git管理版本迭代、谨记线上bug fix、功能开发等任务&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;适用于敏捷开发&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以上就是这份Git规范的作用和使命。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;2分支管理规范&quot;&gt;2.分支管理规范&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;21-分支说明和操作&quot;&gt;2.1 分支说明和操作&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;master分支&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;主分支，永远处于稳定状态，对应当前线上版本&lt;/li&gt;
+      &lt;li&gt;以tag标记一个版本，因此在master分支上看到的每一个tag都应该对应一个线上版本&lt;/li&gt;
+      &lt;li&gt;不允许在该分支上直接提交代码&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;developer分支&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;开发分支，包含了项目最新的功能和代码，所有开发都以来developer分支进行&lt;/li&gt;
+      &lt;li&gt;小的改动、或者协作人数较少时可以直接编辑此分支&lt;/li&gt;
+      &lt;li&gt;改动较多时，以一个新的feature分支进行&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;feature分支&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;功能分支，作为较多人同时协作时的功能分支&lt;/li&gt;
+      &lt;li&gt;较多人开发或者新的功能时，从developer分支切换出feature分支，分支名称为feature/xxx&lt;/li&gt;
+      &lt;li&gt;开发完毕后合并回developer分支并且删除该feature分支&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;release分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hotfix分支&lt;/p&gt;
+
+    &lt;p&gt;目前用于敏捷开发，暂时不设置这两个分支。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;22项目分支操作流程示例&quot;&gt;2.2项目分支操作流程示例&lt;/h3&gt;
+
+&lt;p&gt;这部分内容结合日常项目的开发流程，涉及到开发新功能、分支合并、发布新版本以及发布紧急修复版本等操作，展示常用的命令和操作。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;切到developer分支，更新develop最新代码&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout develop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;从当前分支上新建&lt;code class=&quot;highlighter-rouge&quot;&gt;feature&lt;/code&gt;分支，开发新功能&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; feature/pysNewBranch
+...
+git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ADD 添加什么功能文件&quot;&lt;/span&gt;
+   
+&lt;span class=&quot;c&quot;&gt;# 其他提交&lt;/span&gt;
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;如果此时developer分支有一个提交，影响到你的feature开发，可以 rebase develop分支，前提是 &lt;code class=&quot;highlighter-rouge&quot;&gt;该feature分支只有你自己一个人在开发，如果多人都在该分支，需要进行协调&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 切换到 developer 扽之并更新 developer 分支代码&lt;/span&gt;
+git checkout developer
+git pull &lt;span class=&quot;nt&quot;&gt;--rebase&lt;/span&gt;
+   
+&lt;span class=&quot;c&quot;&gt;# 切回 feature 分支&lt;/span&gt;
+git checkout feature/xxx
+git rebase developer
+   
+&lt;span class=&quot;c&quot;&gt;# 如果需要提交到远端，且之前已经提交到远端，此时需要强推(强推需慎重)&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;--force&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;上述场景也可以通过&lt;code class=&quot;highlighter-rouge&quot;&gt;git cherry-pick &lt;/code&gt;来实现，有兴趣的可以去了解一下这个指令。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;h4 id=&quot;提交信息规范&quot;&gt;提交信息规范&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;提交信息规范部分参考 &lt;a href=&quot;https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commits&quot;&gt;Angular.js commit messgae&lt;/a&gt;。&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;(&lt;/span&gt;&amp;lt;scope&amp;gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:&amp;lt;subject&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;各个部分的说明如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;h5 id=&quot;type类型提交的类别&quot;&gt;type类型，提交的类别&lt;/h5&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;FEAT：新功能&lt;/li&gt;
+      &lt;li&gt;FIX：修复bug&lt;/li&gt;
+      &lt;li&gt;DOCS：文档变动&lt;/li&gt;
+      &lt;li&gt;STYLE：各式调整，对代码实际运行没有改动，添加空格、格式化等&lt;/li&gt;
+      &lt;li&gt;PERF：提升性能的改动&lt;/li&gt;
+      &lt;li&gt;TEST：添加或者修正测试代码&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;scope-修改范围&quot;&gt;Scope 修改范围&lt;/h3&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;主要是此次修改涉及到的内容，简单概括，例如login、train-order&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;修改的描述&quot;&gt;修改的描述&lt;/h3&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;具体的修改描述信息&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;示例&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FIX&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;login&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:登录接口返回信息强验证BUG修改
+TEST&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;login&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:列表页面添加测试代码
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 08 Feb 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2020/02/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9FGit%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020/02/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9B%A2%E9%98%9FGit%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</guid>
+        
+        <category>Git</category>
         
         
       </item>
@@ -1242,68 +1431,6 @@ The key fingerprint is:
         <guid isPermaLink="true">http://localhost:4000/2016/11/macTips/</guid>
         
         <category>iOS</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>TensorFlow 在 iOS 平台上的使用(一)</title>
-        <description>&lt;p&gt;　　距离上次使用 TensorFlow 在iOS平台上做的小 Demo，已经过了四个月了，今天忽然想再看看,发现 Demo 已经不见了，我只能从头在编一次，这次发现编译 iOS 库，简单多了。&lt;/p&gt;
-
-&lt;p&gt;　　tensorflow &lt;a href=&quot;https://github.com/tensorflow/tensorflow/archive/master.zip&quot;&gt;下载地址&lt;/a&gt;，tensorflow 最近提交的时间：2016-11-03，commit：&lt;code class=&quot;highlighter-rouge&quot;&gt;7b7c02de56e013482b5fe5ab05e576dc98fe5742&lt;/code&gt; 。&lt;/p&gt;
-
-&lt;p&gt;　　下载完成后打开文件，找到目录 &lt;code class=&quot;highlighter-rouge&quot;&gt;tensorflow-master/tensorflow/contrib/ios_examples&lt;/code&gt; 你会发现目录下有三个项目和一个 README.md 。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;benchmark 、 camera 、 simple 、README.md
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;如果你发现项目无法运行请看这里&quot;&gt;如果你发现项目无法运行，请看这里&lt;/h3&gt;
-
-&lt;p&gt;　　对于任何项目我们首先打开的应该是 README.md ，里面一般情况都会有介绍如何使用这个项目，tensorflow 也不会例外。README 开头就说了，这个目录里有如何在 iOS 平台上使用 tensorflow 的例子，但是需要注意几点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;你的 Xcode 版本必须是 7.3 或更高版本，并且有安装 command-line 工具 。&lt;/li&gt;
-  &lt;li&gt;项目(Examples) 里必须包含一个静态库：&lt;code class=&quot;highlighter-rouge&quot;&gt;libtensorflow-core.a&lt;/code&gt; 。&lt;/li&gt;
-  &lt;li&gt;下载 &lt;a href=&quot;https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip&quot;&gt;Inception v1&lt;/a&gt;，解压后将 label 和 graph 放在 simple 和 camera 的项目中。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;camera-项目的使用&quot;&gt;camera 项目的使用&lt;/h3&gt;
-
-&lt;p&gt;　　camera 项目在 tensorflow-master/tensorflow/contrib/ios_examples 目录下，如果你是直接打开 camera 项目，编译你会发现报错缺少 imagenet_comp_graph_label_strings.txt 和 tensorflow_inception_graph.pb 两个文件，这两个文件上面已经说到了下载 &lt;a href=&quot;https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip&quot;&gt;Inception v1&lt;/a&gt; 解压得到。现在还差 静态库：&lt;code class=&quot;highlighter-rouge&quot;&gt;libtensorflow-core.a&lt;/code&gt; ，这个需要我们自己编译。&lt;/p&gt;
-
-&lt;h4 id=&quot;编译静态库libtensorflow-corea&quot;&gt;编译静态库：libtensorflow-core.a&lt;/h4&gt;
-
-&lt;p&gt;进入目录：tensorflow-master/tensorflow/contrib/makefile，你可以看到一大堆 .sh 结尾的文件，找到 build_all_ios.sh ，Mac 上可以直接在 termina（终端）上运行命令编译&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sh build_all_ios.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这个编译的过程是很漫长的，一般在一个小时左右。也有可能你在编译的过程中会遇到问题，这次我只遇到一个问题：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;configure.ac:30: error: required file 'build-aux/ltmain.sh' not found
-configure.ac:24: installing 'build-aux/missing'
-Makefile.am: installing 'build-aux/depcomp'
-parallel-tests: installing 'build-aux/test-driver'
-autoreconf: automake failed with exit status: 1
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;解决方法是：先卸载 libtool 在重新安装，&lt;code class=&quot;highlighter-rouge&quot;&gt;brew uninstall libtool&lt;/code&gt; &amp;amp;&amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install libtool&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;如果你还遇到了其它问题，可以看看我之前的一片文章 &lt;a href=&quot;http://baixin.io/2016/07/iOSMachineLearning_TensorFlow/&quot;&gt;iOS开发迎来机器学习的春天—TensorFlow&lt;/a&gt; ，或者是直接去 tensorflow 的 &lt;a href=&quot;https://github.com/tensorflow/tensorflow/issues&quot;&gt;Issues&lt;/a&gt; 里面找。&lt;/p&gt;
-
-&lt;p&gt;一个小时后。。。　如果编译没出问题，你可以在目录　&lt;code class=&quot;highlighter-rouge&quot;&gt;tensorflow-master/tensorflow/contrib/makefile／gen/lib&lt;/code&gt; 下找到一个静态库：&lt;code class=&quot;highlighter-rouge&quot;&gt;libtensorflow-core.a&lt;/code&gt; ，把这个静态库拷贝到 camera 项目中，然后编译运行。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;
-转载请注明：&lt;a href=&quot;http://baixin&quot;&gt;潘柏信的博客&lt;/a&gt; » &lt;a href=&quot;&quot;&gt;点击阅读原文&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 03 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/11/TensorFlowOniOSUse1/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/TensorFlowOniOSUse1/</guid>
-        
-        <category>机器学习</category>
         
         
       </item>
